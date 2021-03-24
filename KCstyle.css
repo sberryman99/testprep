@@ -1,0 +1,453 @@
+img {
+    max-width:100%;
+  }
+
+    body {
+
+        font-family: Verdana;
+        
+        background: linear-gradient(to right, #280463, #1300e8);
+        
+        margin:0;
+        
+        padding:0;
+        
+        }
+
+        header { 
+            background-color: #ab231b;
+            grid-area: header;
+            text-align: center;
+        }
+        .headerpic {
+            grid-area: headerpic;
+            padding: 5px;
+            height: 10vmax;
+        }
+        .headertext {
+            grid-area: headertext;
+            text-align: center;
+        }
+        .headerwrapper {
+            display: grid;
+            justify-items: center;
+            align-items: center;
+            grid-template-columns: 25% auto;
+            grid-template-areas: 
+            "headerpic header text"
+        }
+        header h1 {
+        
+        font-size:5vw;
+        
+        color:#ffffff;
+        
+        font-family:Impact;
+        
+        text-shadow: 2px 2px 5px #3217ff;
+        
+        margin: 0;
+        
+        }
+        
+        header h3 {
+        
+        font-size:3vw;
+        
+        color:#ffffff;
+        
+        margin:0;
+        
+        }
+            
+                nav {
+        
+                    grid-area:nav;
+                    
+                    background:#226324;
+                    
+                }
+                    
+                 nav li {
+                    
+                    padding:10px 10px;
+                    
+                    list-style-type:none;
+                    
+                    font-size:1.5em;
+                    
+                    font-weight:bold;
+                    
+               }
+                    
+                nav ul {
+                    
+                    padding:0;
+                    
+                    }
+                    
+                nav a {
+                    
+                    text-decoration:none;
+                    
+                    color:#ffffff;
+                    
+        }
+                    
+                nav a:hover {
+                    
+                    text-shadow: 2px 2px 5px #3217ff;
+                    
+        }
+
+        main {
+            grid-area: main;
+
+            background-color: #a4c4fe;
+        
+            color:#000080;
+            
+            padding:1% 2%;
+            
+            font-size:1em;
+            
+            }
+        main h2 {
+            text-align: center;
+        }
+
+        aside {
+            grid-area: aside;
+            background-color: yellow;
+            padding: 5px;
+        }
+        aside h2 {
+            color: #0000b0;
+            text-align: center;
+        }
+        aside li {
+            padding: 10px 0;
+            font-size: 1.25em;
+            color: #0000b0;
+        }
+        article {
+            background: navy;
+            padding: 5px;
+        }
+        article h2 {
+            color: white;
+            text-align: center;
+            margin: 1%;
+        }
+        article p {
+            color: white;
+            padding: 1% 2%;
+            font-size: 1em;
+        
+        }
+        .top {
+            grid-area: top;
+        }
+        .middle {
+            grid-area: middle;
+        }
+        .bottom {
+            grid-area: bottom;
+    }
+            footer {
+            
+            grid-area: footer;
+
+            background-color: #400057;
+            
+            font-size:1em;
+
+            text-align: center;
+            
+            color:#ffffff;
+            
+            margin:0;
+            }
+
+            section {
+                grid-area: section; 
+            }
+            .fig1 {
+                grid-area: fig1;
+            }
+            .fig2 {
+                grid-area: fig2;
+                background: #ffffff;
+            }
+            figure {
+                margin: 0;
+                text-align: center;
+            }
+            figcaption {
+                padding: 5px;
+                color: #0000b0;
+            }
+            figure img {
+                margin-top: 16px;
+                max-width: 20em;
+                border: 2px solid #0000b0;
+            }
+
+     
+
+
+/*-------------Mobile Layout--------------*/
+.container1 { /*for later*/
+    display: grid;
+    grid-template-columns:100%;
+    grid-gap:.5em;
+    margin:1%;
+    grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "aside"
+    "footer";
+    }
+    
+    .container2 { /*for index.html*/
+    display: grid;
+    grid-template-columns:100%;
+    grid-gap:.5em;
+    margin:1%;
+    grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "aside"
+    "footer";
+    }
+    .container3 { /*for blog.html*/
+
+        display: grid;
+        
+        grid-template-columns:100%;
+        
+        grid-gap:.5em;
+        
+        margin:1%;
+        
+        grid-template-areas:
+        
+        "header"
+        
+        "nav"
+        
+        "main"
+        
+        "top"
+        
+        "middle"
+        
+        "bottom"
+        
+        "footer";
+        
+        }
+        .container4 { /*for blog.html*/
+
+            display: grid;
+            
+            grid-template-columns:100%;
+            
+            grid-gap:.5em;
+            
+            margin:1%;
+            
+            grid-template-areas:
+            
+            "header"
+            
+            "nav"
+            
+            "main"
+            
+            "fig2"    /* removed the . before fig2*/
+            
+            "footer";
+            
+            }
+
+  /*This stuff is for the hamburger menu*/
+  .toggleNav {
+      display:grid; /*This is what allows the hamburger icon and "Menu" to display*/
+      text-align:center;
+      font-size:1.5em;
+      font-weight:bold;
+      padding:10px;
+      }
+  
+  #flex-nav ul {
+      display: none; /*jQuery toggles the nav from to this class to the .open when clicked*/
+      text-align:center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      }
+   
+  #flex-nav ul.open { /*.open is the class that gets toggled when clicked (with help from the jQuery code)*/
+      display:grid;
+      }
+      
+  #flex-nav li {
+      padding-left:10px;
+      padding-top:10px;
+      }
+  
+  
+  /*-----------------------Tablet Media Query------------------------*/
+  @media only screen and (min-width: 480px)  {
+  .container1 {
+    display: grid;
+    grid-template-columns:35% auto; 
+    grid-template-areas:
+      "header header"
+      "nav main"           /* took out extra row of main */
+      "footer footer";
+      }
+
+      .container2 {
+        display: grid;
+        grid-template-columns:35% auto; 
+        grid-template-areas:
+          "header header"
+          "nav aside"
+          "main main"
+          "footer footer";
+          }
+          .container3 { /*for blog.html*/
+            display: grid;
+            grid-template-columns:auto 1fr;
+            grid-gap: .5em;
+            grid-template-areas:
+            
+            "header header"
+            
+            "nav main"
+            
+            "top top"
+            
+            "middle middle"
+            
+            "bottom bottom"
+            
+            "footer footer";
+            
+            }
+            .container4 { /*for blog.html*/
+            display: grid;
+                grid-template-columns:auto 1fr;
+                grid-gap: .5em;
+                margin: 1%;
+                grid-template-areas:
+                
+                "header header"
+                
+                "nav main"
+                
+                "fig2 fig2"         /* removed the . before fig2*/
+                
+                "footer footer";
+                
+                }
+
+            .nestedgrid {
+                display: grid;
+                grid-template-areas: 
+                "section"
+                "fig1"
+            }
+  
+  /* Below will change from hamburger menu to side navigation*/
+    
+  .toggleNav {
+      display: none; /*Makes the hamburger icon with the word "Menu" to disappear at this screen size*/
+    }
+    
+  #flex-nav ul {
+      display:grid;
+      text-align:left;
+    }
+  
+  #flex-nav li {
+      padding-left:10px;
+      padding-top:10px;
+    } 
+  
+      }
+  
+  /*-----------------------Desktop Media Query------------------------*/
+  @media only screen and (min-width: 960px)  {
+  
+  .container1 { /*for index.html*/
+    display: grid;
+    grid-template-columns:auto 1fr;
+    grid-gap:.5em;
+    margin:1%;
+    grid-template-areas:
+      "header header header"
+      "nav main main"
+      "footer footer footer";
+      }
+      .container2 { /*for index.html*/
+        display: grid;
+        grid-template-columns:auto 1fr 25%;
+        grid-gap:.5em;
+        margin:1%;
+        grid-template-areas:
+          "header header header"
+          "nav main aside"
+          "footer footer footer";
+          }
+          .container3 { /*for blog.html*/
+            display: grid;
+            grid-template-columns:auto 1fr 1.5fr;
+            grid-gap:.5em;  
+            margin:1%;
+            grid-template-areas:
+            
+            "header header header"
+            
+            "nav main top"
+            
+            "nav main middle"
+            
+            "nav main bottom"
+
+            "footer footer footer";
+            
+            }
+            .container4 { /*for blog.html*/
+                display: grid;
+                grid-template-columns:auto 1fr 25%;
+                grid-gap:.5em;
+                margin:1%;
+    
+                grid-template-areas: /* only 2 columns listed, when you have 3 measurements in grid-template columns */
+                
+                "header header header"
+                
+                "nav main main"
+                
+                "fig2 fig2 fig2"       /* removed the . before fig2*/
+
+                "footer footer footer";
+                
+                }
+
+                    /* added this missing code */
+
+                .nestedgrid { /*This is for the nested grid to allow section and fig1 to be side by side on about.html*/
+                    display:grid;
+                    grid-template-columns:2fr 1fr;
+                    grid-template-areas:
+                    "section fig1";
+                    }
+  
+  }
+  
